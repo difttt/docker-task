@@ -20,11 +20,20 @@ starting server at port 3030
 
 **2.1** **Send request via postman**
 
-![test](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612225908331.png)
+using postman to send post request, and the message is json format, such as:
+
+```
+{
+"name": "shiyivei",
+"address": "shiyivei@outlook.com",
+"subject": "Contract Expiration Reminder",
+"content":"Your contract is about to expire, please be aware of investment risks"
+}`
+```
 
 **2.2** **Check the email** 
 
-![test](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612233414156.png)
+Afer sending request, check the email and terminal to verify if everything is ok
 
 ## 3. Test case 2
 
@@ -73,5 +82,4 @@ func main() {
 
 **3.2 Check the email**
 
-![test](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612233313667.png)
-
+Afer sending request, check the email and terminal to verify if everything is ok
