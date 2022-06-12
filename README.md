@@ -20,11 +20,11 @@ starting server at port 3030
 
 **2.1** **Send request via postman**
 
-![image-20220612225908331](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612225908331.png)
+![test](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612225908331.png)
 
 **2.2** **Check the email** 
 
-![image-20220612233414156](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612233414156.png)
+![test](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612233414156.png)
 
 ## 3. Test case 2
 
@@ -73,5 +73,5 @@ func main() {
 
 **3.2 Check the email**
 
-![image-20220612233313667](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612233313667.png)
+![test](/Users/qinjianquan/Library/Application Support/typora-user-images/image-20220612233313667.png)
 
