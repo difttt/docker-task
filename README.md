@@ -24,6 +24,8 @@ using postman to send post request, and the message is json format, such as:
 
 target url: http://127.0.0.1:3030/form
 
+message body:
+
 ```
 {
 "name": "shiyivei",
