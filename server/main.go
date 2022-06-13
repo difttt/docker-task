@@ -62,7 +62,7 @@ func HandEmail(w http.ResponseWriter, r *http.Request) {
 		content := []byte(post.Content)
 
 		pop3Url := "smtp.qq.com:25"
-		auKey := "ibreoouosjwrgahj"
+		auKey := "xxx"
 	
 		MailWithToken(pop3Url,auKey,receiverName,subject,receiverAddr,content) 
 	

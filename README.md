@@ -1,16 +1,16 @@
 # EmailSystem
 
-The system can  send email to a specific user according different params of message
+The system can send email to a specific user according different params of message
 
 ## 1. Start server
 
-Run follwing commands 
+Run follwing commands
 
 ```
 ./email
 ```
 
-Started successfully 
+Started successfully
 
 ```
 starting server at port 3030
@@ -22,6 +22,8 @@ starting server at port 3030
 
 using postman to send post request, and the message is json format, such as:
 
+target url: http://127.0.0.1:3030/form
+
 ```
 {
 "name": "shiyivei",
@@ -31,7 +33,7 @@ using postman to send post request, and the message is json format, such as:
 }`
 ```
 
-**2.2** **Check the email** 
+**2.2** **Check the email**
 
 Afer sending request, check the email and terminal to verify if everything is ok
 
