@@ -26,7 +26,7 @@ func main() {
 	body := flag.String("body", "foo", "a string")
 	flag.Parse()
 
-	pop3Url := "smtp.qq.com:25"
+	pop3Url := "smtp.qq.com:587"
 	auKey := "x"
 	name := "user"
 
@@ -62,7 +62,7 @@ func HandEmail(w http.ResponseWriter, r *http.Request) {
 		content := []byte(post.Content)
 
 		pop3Url := "smtp.qq.com:25"
-		auKey := "ldbmrhntvwbjbgih"
+		auKey := "x"
 
 		MailWithToken(pop3Url, auKey, receiverName, subject, receiverAddr, content)
 
