@@ -19,12 +19,14 @@ type Post struct {
 }
 
 func main() {
-	// url := flag.String("url", "foo", "a string")
-	// token := flag.String("token", "foo", "a string")
+	url := flag.String("url", "foo", "a string")
+	token := flag.String("token", "foo", "a string")
 	revicer := flag.String("revicer", "foo", "a string")
 	title := flag.String("title", "foo", "a string")
 	body := flag.String("body", "foo", "a string")
 	flag.Parse()
+
+	log.Println(url, token)
 
 	pop3Url := "smtp.qq.com:587"
 	auKey := "ldbmrhntvwbjbgih"
