@@ -92,7 +92,7 @@ Afer sending request, check the email and terminal to verify if everything is ok
 
 ## 4 build docker
 ```
-docker build --tag baidang201/email .
+docker build --tag baidang201/email --platform=linux/arm/v8 .
 ```
 
 ## 5 run with docker images
