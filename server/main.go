@@ -39,7 +39,7 @@ func main() {
 }
 
 func MailWithToken(pop3Url string, auKey string, receiverName []string, subject string, receiverAddr []string, content []byte) {
-	log.Println(pop3Url, auKey, receiverName, subject, receiverAddr, content)
+	log.Println(pop3Url, receiverName, subject, receiverAddr, content)
 
 	em := email.NewEmail()
 	em.From = "402513681@qq.com"
