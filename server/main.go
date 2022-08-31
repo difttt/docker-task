@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -10,69 +11,41 @@ import (
 	"github.com/jordan-wright/email"
 )
 
-
 type Post struct {
-	Name string 
-	Address string 
-	Subject string 
-	Content string 
+	Name    string
+	Address string
+	Subject string
+	Content string
 }
 
 func main() {
-	
-	server := http.Server{
-		Addr: "localhost:3030",
-	}
-	//landing page
-	http.HandleFunc("/", func(w http.ResponseWriter,r *http.Request){
-		http.ServeFile(w,r,"form.html")
-	})
+	url := flag.String("url", "foo", "a string")
+	token := flag.String("token", "foo", "a string")
+	revicer := flag.String("revicer", "foo", "a string")
+	title := flag.String("title", "foo", "a string")
+	body := flag.String("body", "foo", "a string")
+	flag.Parse()
 
-	fmt.Printf("starting server at port 3030\n")
-	//handle request
-	http.HandleFunc("/form", HandEmail) 
-	
-	
-	if err := server.ListenAndServe(); err != nil {
-		log.Fatal(err)
-	}
+	log.Println(url, token)
+
+	pop3Url := "smtp.qq.com:587"
+	auKey := "youraukey"
+	name := "user"
+
+	var receiverName []string
+	var receiverAddr []string
+
+	receiverName = append(receiverName, name)
+	receiverAddr = append(receiverAddr, *revicer)
+
+	MailWithToken(pop3Url, auKey, receiverName, *title, receiverAddr, []byte(*body))
 }
 
-func HandEmail(w http.ResponseWriter, r *http.Request) {
-	
-	
-	switch r.Method {
-		case http.MethodPost:
-		dec := json.NewDecoder(r.Body)
-
-		post := Post{}
-
-		err := dec.Decode(&post)
-		if err != nil {
-			log.Println(err.Error())
-			w.WriteHeader(http.StatusInternalServerError)
-			return 
-		}
-		var receiverName []string
-		var receiverAddr []string
-		receiverName = append(receiverName,post.Name)
-		receiverAddr = append(receiverAddr,post.Address)
-		fmt.Println(receiverName,receiverAddr)
-		subject := post.Subject
-		content := []byte(post.Content)
-
-		pop3Url := "smtp.qq.com:25"
-		auKey := "xxx"
-	
-		MailWithToken(pop3Url,auKey,receiverName,subject,receiverAddr,content) 
-	
-	}
-}
-
-func MailWithToken(pop3Url string,auKey string,receiverName []string,subject string,receiverAddr []string,content []byte) {
+func MailWithToken(pop3Url string, auKey string, receiverName []string, subject string, receiverAddr []string, content []byte) {
+	log.Println(pop3Url, auKey, receiverName, subject, receiverAddr, content)
 
 	em := email.NewEmail()
-	em.From = "1548546585@qq.com"
+	em.From = "402513681@qq.com"
 	em.To = receiverAddr
 
 	em.Subject = subject

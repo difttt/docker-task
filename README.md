@@ -87,3 +87,14 @@ func main() {
 **3.2 Check the email**
 
 Afer sending request, check the email and terminal to verify if everything is ok
+
+
+
+## 4 build docker
+```
+docker build --tag baidang201/email --platform=linux/arm64/v8 .
+```
+
+## 5 run with docker images
+
+docker run  baidang201/email  /email  --revicer="116174160@qq.com" --title="你好，这是邮件测试2"  --body="你好，正在邮件api测试2"
