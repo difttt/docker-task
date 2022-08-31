@@ -1,11 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
-	"fmt"
 	"log"
-	"net/http"
 	"net/smtp"
 
 	"github.com/jordan-wright/email"
